@@ -1,0 +1,36 @@
+.loginOptions {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px; //assuming that #mydiv has the height of 100px
+    margin-left: -100px; //assuming that #mydiv has the width of 200px
+}
+
+#customBtn {
+    display: inline-block;
+    background-color: #4285F4;
+    width: 190px;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+  #customBtn:hover {
+    cursor: pointer;
+  }
+  span.icon {
+    background: url('/assets/images/g-normal.png') transparent 5px 50% no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    width: 42px;
+    height: 42px;
+  }
+  span.buttonText {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color:#fff;
+    /* Use the Roboto font that is loaded in the <head> */
+    font-family: 'Roboto', sans-serif;
+  }

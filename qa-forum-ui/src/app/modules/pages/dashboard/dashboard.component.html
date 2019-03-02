@@ -1,0 +1,19 @@
+<div>
+  <h1>Recent questions</h1>
+</div>
+<div class="card">
+
+<div *ngIf="questions">
+  <div *ngFor="let question of questions" style="border-bottom:2px solid black;">
+    <div class="card-body">
+    <p><a (click)="navigateToQuestion(question.Id)" style=" color: black; cursor: pointer;"><b>{{question.Value}}</b></a> <br>{{question.Description}}</p>
+    <button class="dislike">
+      <span class="fa fa-thumbs-o-down" aria-hidden="true"> <br> {{question.DownVote}} </span>
+    </button>
+    <button class="like">
+      <span class="fa fa-thumbs-o-up" aria-hidden="true"><br> {{question.UpVote}} </span>
+    </button><br> 
+  </div>
+  </div>
+</div>
+</div>

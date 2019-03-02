@@ -1,0 +1,18 @@
+<div *ngIf="question && answers" style="border-bottom:2px solid black;">
+  <p>
+    <span>
+      <h2>{{question.Value}}</h2>
+    </span>
+    <a (click)="answer()" style=" color: blue; cursor: pointer;">Add Answer</a>
+  </p>
+  <p>{{question.Description}}</p>
+  <p>Likes: {{question.UpVote}} Dislikes: {{question.DownVote}}</p>
+  <div>
+    <h2>Answers</h2>
+    <div *ngFor="let answer of answers" style="border-bottom:2px solid brown;">
+      <p>{{answer.Value}}</p>
+      <p>{{answer.Description}}</p>
+      <p>Likes: {{answer.UpVote}} Dislikes: {{answer.DownVote}}</p>
+    </div>
+  </div>
+</div>
