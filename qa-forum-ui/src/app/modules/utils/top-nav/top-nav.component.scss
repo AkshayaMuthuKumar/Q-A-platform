@@ -4,7 +4,7 @@
   
   body {
     margin: 0px;
-    font-family: 'segoe ui';
+    
   }
   
   .nav {
@@ -12,6 +12,7 @@
     width: 100%;
     background-color:#941313;
     position: relative;
+    color: white;
   }
   
   .nav > .nav-header {
@@ -35,7 +36,7 @@
   
   .nav > .nav-links {
     display: inline;
-    float: right;
+    
     font-size: 18px;
   }
   

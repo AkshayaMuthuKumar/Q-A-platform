@@ -46,9 +46,10 @@ export class QuestionComponent implements OnInit {
         }
       });
   }
-
   answer() {
     this.router.navigate(['/answer/' + this.questionId]);
+  }
+  comment(){
   }
 
 }

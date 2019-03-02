@@ -1,18 +1,45 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<body>
 <div *ngIf="question && answers" style="border-bottom:2px solid black;">
-  <p>
+  <p><br>
     <span>
-      <h2>{{question.Value}}</h2>
-    </span>
-    <a (click)="answer()" style=" color: blue; cursor: pointer;">Add Answer</a>
+        <h2>{{question.Value}}</h2> 
+      </span><br>
+    <span>
+        <h4>{{question.Description}}</h4> 
+      </span><br>
   </p>
-  <p>{{question.Description}}</p>
-  <p>Likes: {{question.UpVote}} Dislikes: {{question.DownVote}}</p>
-  <div>
-    <h2>Answers</h2>
-    <div *ngFor="let answer of answers" style="border-bottom:2px solid brown;">
-      <p>{{answer.Value}}</p>
-      <p>{{answer.Description}}</p>
-      <p>Likes: {{answer.UpVote}} Dislikes: {{answer.DownVote}}</p>
+   <button (click)="answer()"class="btn btn-danger" style="cursor: pointer;"> <b>Add Answer</b> </button>
+   <h2> <span  class="badge badge-success"> Likes ! :  {{question.UpVote}}  </span>
+   <span  class="badge badge-danger"> Dislikes ! :  {{question.DownVote}}  </span></h2>
+
+  <div><br>
+    <h1>Answers</h1>
+
+    <div class="card">
+      <div *ngFor="let answer of answers"  style="border-bottom:2px solid brown;">
+      <div class="card-body">
+      <h4 class="card-title"><p>{{answer.Value}}</p></h4>
+      <h5 class="card-text">
+        <span class="fa fa-user"> {{answer.UserId}}  </span>
+        <span  class="fa fa-pencil-square-o"> {{answer.CreatedDate}} </span>  
+      </h5>
+
+
+      <h6 class="card-text"><p>{{answer.Description}}</p></h6>
+      <h2> <span  class="badge badge-success"> Likes ! :  {{question.UpVote}}  </span>
+        <span  class="badge badge-danger"> Dislikes ! :  {{question.DownVote}}  </span></h2>
+    </div>
     </div>
   </div>
+  </div>
+  <a (click)="comment()" class="btn btn-danger" style="color:white; cursor: pointer;">Add Comment</a>
+
 </div>
+</body>

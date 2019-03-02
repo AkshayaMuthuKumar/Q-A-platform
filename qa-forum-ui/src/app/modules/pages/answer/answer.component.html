@@ -13,6 +13,8 @@
   <textarea   id="answer"  [(ngModel)]="answer"  class="form-control" rows="3" placeholder="Answer title goes here"></textarea><br><br>
   <textarea   id="description" [(ngModel)]="description" class="form-control" rows="3" placeholder="Description goes here"></textarea><br>
   <button (click)="createAnswer()"class="btn btn-danger">Add Answer</button>
+  <a (click)="comment()" class="btn btn-danger" style="cursor: pointer;">Add Comment</a>
+
 </div>
 </body>
 
