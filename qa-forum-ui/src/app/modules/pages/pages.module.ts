@@ -6,9 +6,10 @@ import { AskComponent } from './ask/ask.component';
 import { AnswerComponent } from './answer/answer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { QuestionComponent } from './question/question.component';
+import { CommentComponent } from './question/comment/comment.component';
 
 @NgModule({
-  declarations: [AskComponent, AnswerComponent, DashboardComponent, QuestionComponent],
+  declarations: [AskComponent, AnswerComponent, DashboardComponent, QuestionComponent, CommentComponent],
   imports: [
     CommonModule,
     FormsModule

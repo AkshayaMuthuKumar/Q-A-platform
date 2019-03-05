@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
@@ -77,6 +78,8 @@ namespace QAForum.API.Controllers
                 return BadRequest(ModelState);
             }
 
+            questionComment.UserId = base.UserId;
+            questionComment.CreatedDate = DateTime.Now;
             db.QuestionComment.Add(questionComment);
             await db.SaveChangesAsync();
 

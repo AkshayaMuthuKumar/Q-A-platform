@@ -7,3 +7,51 @@ body {
     height:100%;
     width:100%;
 }
+
+.dislikeBtn{
+	padding-right: 20px;
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+	border-radius: 50%;
+	color: rgba(255,82,82 ,1);
+	background-color: rgba(255,138,128 ,0.3);
+	border-color: rgba(255,82,82 ,1);
+	border-width: 1px;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.likeBtn{
+	width: 40px;
+	height: 40px;
+	margin: 0 10px;
+	border-radius: 50%;
+	color: rgba(0,150,136 ,1);
+	background-color:rgba(38,166,154 ,0.3);
+	border-color: rgba(0,150,136 ,1);
+	border-width: 1px;
+    font-size: 15px;
+	padding: 10px;
+}
+
+.padding-right-20 {
+	padding-right: 20px;
+}
+
+.padding-right-5 {
+	padding-right: 5px;
+}
+
+.padding-top-15 {
+    padding-top:15px;
+}
+
+.padding-bottom-7 {
+	padding-bottom: 7px;
+}
+
+.askQuestion {
+	background-color:#941313;
+	color:#fff !important;
+}

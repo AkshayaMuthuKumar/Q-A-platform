@@ -1,14 +1,53 @@
+body {
+  height: 100%;
+}
+.bg {
+  /* The image used */
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  
 .loginOptions {
+    width: 340px;
+    margin: 30px auto;
     position: fixed;
     top: 50%;
     left: 50%;
     margin-top: -50px; //assuming that #mydiv has the height of 100px
     margin-left: -100px; //assuming that #mydiv has the width of 200px
 }
-
+.loginOptions h2 {
+  margin: 0 0 15px;
+}
+.loginOptions form {
+  margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.loginOptions .avatar {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: -50px;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  z-index: 9;
+  background: #70c5c0;
+  padding: 15px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
 #customBtn {
+    font-size: 15px;
+    font-weight: bold;
     display: inline-block;
-    background-color: #4285F4;
     width: 190px;
     border-radius: 5px;
     white-space: nowrap;
@@ -16,21 +55,5 @@
   #customBtn:hover {
     cursor: pointer;
   }
-  span.icon {
-    background: url('/assets/images/g-normal.png') transparent 5px 50% no-repeat;
-    display: inline-block;
-    vertical-align: middle;
-    width: 42px;
-    height: 42px;
-  }
-  span.buttonText {
-    display: inline-block;
-    vertical-align: middle;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    color:#fff;
-    /* Use the Roboto font that is loaded in the <head> */
-    font-family: 'Roboto', sans-serif;
-  }
+  
+  

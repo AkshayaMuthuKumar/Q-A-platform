@@ -1,3 +1,5 @@
+import { Comment} from './comment'
+
 export class Question {
   public Id: number;
   public Value: string;
@@ -6,6 +8,7 @@ export class Question {
   public CreatedDate: Date;
   public UpVote: number;
   public DownVote: number;
+  public Comments: Comment[];
 
   constructor () {
     

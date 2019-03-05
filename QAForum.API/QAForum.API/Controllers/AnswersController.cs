@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using QAForum.API.DAL;
 using QAForum.API.Models;
+using QAForum.API.Models.Response;
 
 namespace QAForum.API.Controllers
 {
@@ -22,9 +24,17 @@ namespace QAForum.API.Controllers
         }
 
         [Route("api/questions/{questionId}/answers")]
-        public IQueryable<Answer> GetAnswers(int questionId)
+        public List<AnswerResponse> GetAnswers(int questionId)
         {
-            return db.Answers.Where( x=> x.QuestionId == questionId);
+            var answerResponseList = new List<AnswerResponse>();
+            var answers = db.Answers.Where( x=> x.QuestionId == questionId).ToList();
+            foreach(var answer in answers)
+            {
+                var comments = db.AnswwerComment.Where(i => i.AnswerId == answer.Id).ToList();
+                var answerResponse = new AnswerResponse(answer, comments);
+                answerResponseList.Add(answerResponse);
+            }
+            return answerResponseList;
         }
 
         // GET: api/Answers/5

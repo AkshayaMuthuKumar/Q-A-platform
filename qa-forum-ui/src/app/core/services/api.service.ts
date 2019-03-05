@@ -7,7 +7,9 @@ import { Answer } from '../../core/models/answer';
 
 const routes = {
   questions: 'questions',
-  answers: 'answers'
+  answers: 'answers',
+  questionComments: 'questionComments',
+  answerComments: 'answercomments'
 };
 
 @Injectable({
@@ -36,5 +38,21 @@ export class ApiService {
 
   addAnswer(answer: Answer) {
     return this.httpClient.post(env.apiServerBaseUrl + routes.answers, answer);
+  }
+
+  addAnswerComment(answerId, comment) {
+    return this.httpClient.post(env.apiServerBaseUrl + routes.answerComments, {'Value': comment, 'AnswerId': answerId});
+  }
+
+  addQuestionComment(questionId, comment) {
+    return this.httpClient.post(env.apiServerBaseUrl + routes.questionComments, {'Value': comment, 'QuestionId': questionId});
+  }
+
+  updateQuestion(id, question) {
+    return this.httpClient.put(env.apiServerBaseUrl + routes.questions + '/' + id, question);
+  }
+
+  updateAnswer(id, answer) {
+    return this.httpClient.put(env.apiServerBaseUrl + routes.answers + '/' + id, answer);
   }
 }

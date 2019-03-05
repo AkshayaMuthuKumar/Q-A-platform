@@ -1,7 +1,7 @@
 <div class="nav" *ngIf="showTopNav">
     <div class="nav-header">
         <div class="nav-title">
-            <a routerLink="/">QA Forum</a>
+            <a routerLink="/"><b>QA Forum</b></a>
         </div>
     </div>
     <div class="nav-btn">
@@ -13,7 +13,7 @@
     </div>
     <input type="checkbox" id="nav-check">
     <div class="nav-links">
-        <a href="#" *ngIf="userName"><span class="fa fa-user"></span>  Hello {{userName}}</a>
+        <a routerLink="/" *ngIf="userName"><span class="fa fa-user"></span>  Hello {{userName}}</a>
         <a routerLink="/ask"><span class="fa fa-pencil-square-o"></span>  Ask</a>
         <a (click)='logout()'><span class="fa fa-sign-out"></span>  Log out</a>
     </div>

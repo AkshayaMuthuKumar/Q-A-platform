@@ -18,6 +18,8 @@ import { SessionModule } from './modules/session/session.module';
 import { UtilsModule } from './modules/utils/utils.module';
 import { PagesModule } from './modules/pages/pages.module';
 import { AuthService } from './core/services/auth.services';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { AuthService } from './core/services/auth.services';
     SessionModule,
     UtilsModule,
     NgbModule,
-    PagesModule
+    PagesModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     AuthGuard,

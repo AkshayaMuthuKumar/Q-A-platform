@@ -9,6 +9,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using QAForum.API.DAL;
 using QAForum.API.Models;
+using QAForum.API.Models.Response;
 
 namespace QAForum.API.Controllers
 {
@@ -23,7 +24,7 @@ namespace QAForum.API.Controllers
         }
 
         // GET: api/Questions/5
-        [ResponseType(typeof(Question))]
+        [ResponseType(typeof(QuestionResponse))]
         public async Task<IHttpActionResult> GetQuestion(int id)
         {
             Question question = await db.Questions.FindAsync(id);
@@ -32,7 +33,8 @@ namespace QAForum.API.Controllers
                 return NotFound();
             }
 
-            return Ok(question);
+            var comments = db.QuestionComment.Where(i => i.QuestionId == id).ToList();
+            return Ok(new QuestionResponse(question, comments));
         }
 
         // PUT: api/Questions/5

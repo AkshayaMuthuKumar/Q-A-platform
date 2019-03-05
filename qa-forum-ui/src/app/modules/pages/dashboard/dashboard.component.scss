@@ -1,37 +1,10 @@
-button.like{
-	width: 40px;
-	height: 40px;
-	margin: 0 auto;
-	border-radius: 50%;
-	color: rgba(0,150,136 ,1);
-	background-color:rgba(38,166,154 ,0.3);
-	border-color: rgba(0,150,136 ,1);
-	border-width: 1px;
-    font-size: 15px;
-    padding: 10px;
+.headerArea {
+	border-bottom: 1px solid #eff0f1;
+	padding: 10px 0px;
+	color:#941313;
 }
-body{
-    margin:50px;
-}
-.card{
-    margin:50px;
 
-}
-button.dislike{
-	width: 40px;
-	height: 40px;
-	margin: 0 auto;
-	border-radius: 50%;
-	color: rgba(255,82,82 ,1);
-	background-color: rgba(255,138,128 ,0.3);
-	border-color: rgba(255,82,82 ,1);
-	border-width: 1px;
-    font-size: 15px;
-    padding: 10px;
-}
-p{
-    font-size: 30px;
-}
-h1{
-    color:#941313;
+.questionCard {
+	border-bottom: 1px solid #eff0f1;
+	padding: 15px 0;
 }

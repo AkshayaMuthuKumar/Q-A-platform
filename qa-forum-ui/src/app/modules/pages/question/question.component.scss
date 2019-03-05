@@ -1,8 +1,23 @@
-h1{
-    color:#941313;
-    margin:20px;
-    padding:5px;
+.headerArea {
+	border-bottom: 1px solid #eff0f1;
+	padding: 10px 0px;
 }
+
+.answersHeader {
+	border-bottom: 1px solid #eff0f1;
+	padding: 5px 0;
+}
+
+.addAnswer {
+    background-color:#941313;
+	color:#fff !important;
+}
+
+.answerItem {
+    padding:15px 0;
+    border-bottom: 1px solid #eff0f1;
+}
+
 p{
     margin:20px;
     padding:5px;
@@ -17,10 +32,6 @@ h2{
     width:200px;
     height:50px;
 }
-.card{
-    margin:20px;
-    padding:5px;
-}
 .btn{
     margin:20px;
     padding:5px;
@@ -30,4 +41,18 @@ h2{
     padding:5px;
     width:150px;
     height:40px;
+}
+
+.commentBorder {
+    margin-top:15px;
+    border-top: 1px solid #eff0f1;
+}
+.commentItem{
+    padding-top:10px;
+    font-size: 17px;
+}
+
+.commentUserDetails {
+    font-style: italic;
+    font-size: 15px;
 }

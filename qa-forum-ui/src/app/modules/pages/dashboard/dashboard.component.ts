@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router  } from '@angular/router';
+import { Router } from '@angular/router';
 
-import {ApiService} from '../../../core/services/api.service'
+import { ApiService } from '../../../core/services/api.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +11,7 @@ import {ApiService} from '../../../core/services/api.service'
 export class DashboardComponent implements OnInit {
 
   questions: any;
-  
+
   constructor(private apiService: ApiService,
     private router: Router) { }
 
@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   getQuestions() {
     this.apiService.getQuestions()
       .subscribe((data: any) => {
-        if(data) {
+        if (data) {
           this.questions = data;
         }
       });
@@ -34,5 +34,9 @@ export class DashboardComponent implements OnInit {
 
   answer(id) {
     this.router.navigate(['/answer/' + id]);
+  }
+
+  ask() {
+    this.router.navigate(['/ask']);
   }
 }

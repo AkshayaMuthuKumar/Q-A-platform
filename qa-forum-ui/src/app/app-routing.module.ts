@@ -10,13 +10,15 @@ import { DashboardComponent } from './modules/pages/dashboard/dashboard.componen
 import { AskComponent } from './modules/pages/ask/ask.component';
 import { AnswerComponent } from './modules/pages/answer/answer.component';
 import { QuestionComponent } from './modules/pages/question/question.component';
+import { CommentComponent } from './modules/pages/question/comment/comment.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: '', component: DashboardComponent, canActivate: [AuthGuard]},
   { path: 'ask', component: AskComponent, canActivate: [AuthGuard]},
   { path: 'answer/:id', component: AnswerComponent, canActivate: [AuthGuard]},
-  { path: 'question/:id', component: QuestionComponent, canActivate: [AuthGuard]}
+  { path: 'question/:id', component: QuestionComponent, canActivate: [AuthGuard]},
+  { path: 'comment', component: CommentComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

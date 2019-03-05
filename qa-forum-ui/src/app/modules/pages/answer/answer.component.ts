@@ -13,6 +13,8 @@ export class AnswerComponent implements OnInit {
 
   questionId: number;
   answer: string;
+  description: string;
+
   constructor(private activatedRoute: ActivatedRoute,
     private apiService: ApiService,
     private router: Router
@@ -28,12 +30,13 @@ export class AnswerComponent implements OnInit {
 
     var answerInput = new Answer(); 
     answerInput.Value = this.answer;
+    answerInput.Description = this.description;
     answerInput.QuestionId = this.questionId;
 
     this.apiService.addAnswer(answerInput).subscribe(
       (data: any) => {
         if (data) {
-          this.router.navigate(['']);
+          this.router.navigate(['/question/' + this.questionId]);
         }
       }
     );

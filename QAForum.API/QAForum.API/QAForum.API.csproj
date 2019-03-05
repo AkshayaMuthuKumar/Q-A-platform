@@ -134,6 +134,8 @@
     <Compile Include="Models\AnswerComment.cs" />
     <Compile Include="Models\QuestionComment.cs" />
     <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Response\AnswerResponse.cs" />
+    <Compile Include="Models\Response\QuestionResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
