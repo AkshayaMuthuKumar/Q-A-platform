@@ -1,20 +1,21 @@
-<div class="nav" *ngIf="showTopNav">
+<div class="nav " *ngIf="showTopNav">
     <div class="nav-header">
         <div class="nav-title">
-            <a routerLink="/"><b>QA Forum</b></a>
+            <img src="./q.jpg" height="30px;">
+            <a routerLink="/"><b class="a">QA</b><b class="b">FORUM</b></a>
         </div>
     </div>
-    <div class="nav-btn">
+    <div class="nav-btn navbar-toggle" data-toggle="collapse">
         <label for="nav-check">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
         </label>
     </div>
     <input type="checkbox" id="nav-check">
-    <div class="nav-links">
-        <a routerLink="/" *ngIf="userName"><span class="fa fa-user"></span>  Hello {{userName}}</a>
-        <a routerLink="/ask"><span class="fa fa-pencil-square-o"></span>  Ask</a>
-        <a (click)='logout()'><span class="fa fa-sign-out"></span>  Log out</a>
+    <div class="nav-links navbar-nav ml-auto">
+        <a routerLink="/" *ngIf="userName"><span class="fa fa-user"> </span>  Hello {{userName}}</a>
+        <a routerLink="/ask"><span class="fa fa-pencil-square-o"> </span>  Ask</a>
+        <a (click)='logout()'><span class="fa fa-sign-out"> </span>  Log out</a>
     </div>
 </div>

@@ -10,33 +10,41 @@
   <div *ngIf="questions">
     <div *ngFor="let question of questions" class="questionCard">
       <div class="row">
-        <div class="col-md-2">
-          <button (click)="navigateToQuestion(question.Id)" class="likeBtn">
-            <span class="fa fa-thumbs-o-up padding-bottom-7" aria-hidden="true"></span>
-            <span>{{question.UpVote}}</span>
-          </button>
-          <button (click)="navigateToQuestion(question.Id)" class="dislikeBtn">
-            <span class="fa fa-thumbs-o-down padding-bottom-7" aria-hidden="true"></span>
-            <span class="count">{{question.DownVote}} </span>
-          </button>
-        </div>
+        
         <div class="col-md-10">
           <a (click)="navigateToQuestion(question.Id)" style=" color: black; cursor: pointer;">
             <h4>{{question.Value}}</h4>
           </a>
         </div>
+       
       </div>
+      
       <div class="row">
-        <div class="col-md-2">
-
-        </div>
+        
         <div class="col-md-10">
           {{question.Description}}
         </div>
+        <div class="col-md-2">
+
+        </div>
       </div>
       <div class="row">
-        <div class="col-md-6">
+          <div class="col-md-2">
 
+          </div>
+        </div><br>
+
+      <div class="row">
+          
+        <div class="col-md-6">
+            <button (click)="navigateToQuestion(question.Id)" class="likeBtn">
+                <span class="fa fa-thumbs-o-up padding-bottom-7" aria-hidden="true"></span>
+                <span>{{question.UpVote}}</span>
+              </button>
+              <button (click)="navigateToQuestion(question.Id)" class="dislikeBtn">
+                <span class="fa fa-thumbs-o-down padding-bottom-7" aria-hidden="true"></span>
+                <span class="count">{{question.DownVote}} </span>
+              </button>
         </div>
         <div class="col-md-6">
           <p class="card-text">
@@ -45,6 +53,7 @@
             <span class="fa fa-user padding-right-5"></span> <span>{{question.UserId}}</span>
           </p>
         </div>
-      </div>
+      </div><br>
     </div>
+  </div>
   </div>
