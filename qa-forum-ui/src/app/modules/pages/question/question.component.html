@@ -1,114 +1,92 @@
-      <div class="container" *ngIf="question">
+     <div class="container" *ngIf="question">
   <div class="row headerArea">
+      <div class="col-md-10">
+
+      </div>
       <div class="col-md-2">
           <a (click)="ask()" class="btn askQuestion">Ask Question</a>
-        </div>
-    <div class="col-md-10">
-      <h2>{{question.Value}}</h2>
-    </div>
-  
+          </div>
+  <div class="col-md-10">
+  <h2>{{question.Value}}</h2>
+  </div>
+ 
   </div>
   <div class="question padding-top-15">
-    <div class="row">
-      <div class="col-md-2">
-        
+  <div class="row">
+  <div class="col-md-12">
+  {{question.Description}}
+  <div class="row" *ngIf="question.Comments" class="commentBorder">
+  <div *ngFor="let comment of question.Comments" class="commentItem">
+  {{comment.Value}}  <span class="commentUserDetails">- by {{comment.UserId}} on {{comment.CreatedDate}} </span>
+  </div>
+  </div>
+  <div class="col-md-2">
+      <button (click)="likeQuestion()" class="likeBtn">
+      <span class="fa fa-thumbs-o-up padding-bottom-7" aria-hidden="true"></span>
+      <span>{{question.UpVote}}</span>
+      </button>
+      <button (click)="dislikeQuestion()" class="dislikeBtn">
+      <span class="count">{{question.DownVote}} </span>
+      </button>
       </div>
-      <div class="col-md-10">
-        <div class="row">
-          {{question.Description}}
-        </div><br>
-      
-        <div class="row" *ngIf="question.Comments" class="commentBorder">
-          <div *ngFor="let comment of question.Comments" class="commentItem">
-            {{comment.Value}}  <span class="commentUserDetails">- by {{comment.UserId}} on {{comment.CreatedDate}} </span>
-          </div>
-        </div>
-        <div class="row padding-top-15">
-          <div class="col-md-4">
-
-          </div>
-        <div class="row">
-            <div class="col-md-4">
-              <button (click)="likeQuestion()" class="likeBtn">
-                  <span class="fa fa-thumbs-o-up padding-bottom-7" aria-hidden="true"></span>
-                  <span>{{question.UpVote}}</span>
-                </button>
-                <button (click)="dislikeQuestion()" class="dislikeBtn">
-                  <span class="fa fa-thumbs-o-down padding-bottom-7" aria-hidden="true"></span>
-                  <span class="count">{{question.DownVote}} </span>
-                </button>
-              </div>
-              <div class="col-md-10"><br>
-              <button type="button" class="btn btn-light"><span><a (click)="addQuestionComment()" class="fa fa-comment-o padding-right-20">  Add Comment  </a></span></button>
-              <span class="fa fa-pencil-square-o padding-right-5"> </span> 
-              <span class="padding-right-20">{{question.CreatedDate}}</span>
-              <span class="fa fa-user padding-right-5">{{question.UserId}}</span>
-          </div>
-</div>
-        </div>
-      </div>
-    </div>
+  <div class="row padding-top-15">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-8">
+  <button type="button" class="btn btn-light"><span><a (click)="addQuestionComment()" class="fa fa-comment-o padding-right-20">  Add Comment  </a></span></button>
+  <span class="fa fa-pencil-square-o padding-right-5"> </span>
+  <span class="padding-right-20">{{question.CreatedDate}}</span>
+  <span class="fa fa-user padding-right-5"></span> <span>{{question.UserId}}</span>
+  </div></div>
+  </div></div>
   </div>
   <div class="answers">
-    <div class="row answersHeader">
-      <div class="col-md-3">
-        <h2>{{answers.length}} Answers</h2>
-      </div>
-      <div class="col-md-7">
-
-      </div>
-      <div class="col-md-2">
-        <a (click)="answer()" class="btn addAnswer">Add Answer</a>
-      </div>
-    </div>
-    <div *ngIf="answers">
-      <div *ngFor="let answer of answers" class="answerItem">
-        <div class="row">
-          <div class="col-md-2">
-            
-          </div>
-          <div class="col-md-10">
-            <div class="row">
-              <h5>{{answer.Value}}</h5>
-            </div>
-            <div class="row">
-              {{answer.Description}}
-            </div>
-            <div class="row answersHeader">
-            <div class="col-md-2"><br>
-                <button (click)="likeAnswer(answer.Id, answer)" class="likeBtn">
-                  <span class="fa fa-thumbs-o-up padding-bottom-7" aria-hidden="true"></span>
-                  <span>{{answer.UpVote}}</span>
-                </button>
-                <button (click)="dislikeAnswer(answer.Id, answer)" class="dislikeBtn">
-                  <span class="fa fa-thumbs-o-down padding-bottom-7" aria-hidden="true"></span>
-                  <span class="count">{{answer.DownVote}} </span>
-                </button>
-              </div>
-              <div class="col-md-6">
-              </div>
-              <div class="col-md-4">
-                  <button type="button" class="btn btn-light"><span><a (click)="addAnswerComment(answer.Id)" class="fa fa-comment-o padding-right-20">  Add Comment  </a></span></button>
-              </div>
-            </div><br> 
-            <div class="row" *ngIf="answer.Comments" class="commentBorder"><h4 style=" color:#941313;">Comments</h4>
-              <div *ngFor="let comment of answer.Comments" class="commentItem">
-                {{comment.Value}}  <span class="commentUserDetails">- by {{comment.UserId}} on {{answer.CreatedDate}} </span>
-              </div>
-            </div>
-            <div class="row padding-top-15">
-              <div class="col-md-4">
-
-              </div>
-              <div class="col-md-8">
-                      <span class="fa fa-pencil-square-o padding-right-5"> </span> <span
-                      class="padding-right-20">{{answer.CreatedDate}}</span>
-                    <span class="fa fa-user padding-right-5"></span> <span>{{answer.UserId}}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="row answersHeader">
+  <div class="col-md-3">
+  <h2>{{answers.length}} Answers</h2>
+  </div>
+  <div class="col-md-7">
+  </div>
+  <div class="col-md-2">
+  <a (click)="answer()" class="btn addAnswer">Add Answer</a>
+  </div></div>
+  <div *ngIf="answers">
+  <div *ngFor="let answer of answers" class="answerItem">
+  <div class="row">
+ 
+  <div class="col-md-10">
+  <div class="row" style="text-align:justify">
+  <h5>{{answer.Value}}</h5>
+  </div>
+  <div class="row">
+  {{answer.Description}}
+  </div><br>
+  <div class="col-md-2">
+      <button (click)="likeAnswer(answer.Id, answer)" class="likeBtn">
+      <span class="fa fa-thumbs-o-up padding-bottom-7" aria-hidden="true"></span>
+      <span>{{answer.UpVote}}</span>
+      </button>
+      <button (click)="dislikeAnswer(answer.Id, answer)" class="dislikeBtn">
+      <span class="fa fa-thumbs-o-down padding-bottom-7" aria-hidden="true"></span>
+      <span class="count">{{answer.DownVote}} </span>
+      </button><br>
+      </div><br>
+  <div class="row" *ngIf="answer.Comments" class="commentBorder"><h4 style=" color:#941313;"><b>Comments</b></h4>
+  <div *ngFor="let comment of answer.Comments" class="commentItem">
+  {{comment.Value}}  <span class="commentUserDetails">- by {{comment.UserId}} on {{answer.CreatedDate}} </span>
+  </div>
+  </div>
+  <div class="row padding-top-15">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-8">
+  <button type="button" class="btn btn-light"><span><a (click)="addAnswerComment(answer.Id)" class="fa fa-comment-o padding-right-20">  Add Comment  </a></span></button>
+  <span class="fa fa-pencil-square-o padding-right-5"> </span> <span
+  class="padding-right-20">{{answer.CreatedDate}}</span>
+  <span class="fa fa-user padding-right-5"></span> <span>{{answer.UserId}}</span>
+  </div></div>
+  </div></div>
+  </div>
+  </div>
+  </div></div>
+  
