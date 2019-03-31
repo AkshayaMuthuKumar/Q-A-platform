@@ -1,4 +1,4 @@
-     <div class="container" *ngIf="question">
+    <div class="container" *ngIf="question">
   <div class="row headerArea">
       <div class="col-md-10">
 
@@ -26,6 +26,7 @@
       <span>{{question.UpVote}}</span>
       </button>
       <button (click)="dislikeQuestion()" class="dislikeBtn">
+            <span class="fa fa-thumbs-o-up padding-bottom-7" aria-hidden="true"></span>
       <span class="count">{{question.DownVote}} </span>
       </button>
       </div>
