@@ -71,7 +71,7 @@ export class QuestionComponent implements OnInit {
   }
 
   dislikeQuestion() {
-    this.question.DownVote = this.question.DownVote - 1;
+    this.question.DownVote = this.question.DownVote + 1;
     this.apiService.updateQuestion(this.questionId, this.question)
     .subscribe((data: any) => {
     
@@ -87,7 +87,7 @@ export class QuestionComponent implements OnInit {
   }
 
   dislikeAnswer(id, answer:Answer) {
-    answer.DownVote = answer.DownVote - 1;
+    answer.DownVote = answer.DownVote + 1;
     this.apiService.updateAnswer(id, answer)
     .subscribe((data: any) => {
     
